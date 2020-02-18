@@ -6,6 +6,8 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import './App.css';
 
+import settings from './settings'
+
 const MainContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -19,11 +21,15 @@ class App extends Component {
       columnDefs: [
       {
         headerName: "Transaction Date",
-        field: "transactionDate"
+        field: "transactionDate",
+        sortable: true,
+        comparator: settings.dateComparator
       },
       {
         headerName: "Transaction Amount",
-        field: "transactionAmount"
+        field: "transactionAmount",
+        sortable: true,
+        sortingOrder: ["desc"],
       },
       {
         headerName: "Current Balance",
@@ -31,17 +37,20 @@ class App extends Component {
       },
       {
         headerName: "Transaction Type",
-        field: "transactionType"
+        field: "transactionType",
+        sortable: true,
+        filter: true
       },
       {
         headerName: "Reference",
         field: "reference"
-      }]
+      }],
+      paginationPageSize: 10
     }
   }
 
   async getTransactionDetails(){
-    fetch('http://localhost:3000/data.json')
+    fetch(settings.baseUrl + 'data.json')
       .then((res) => res.json())
       .then((data) => {
         this.setState({rowData: data});
@@ -63,7 +72,9 @@ class App extends Component {
           <h1>Recent Bank Transactions</h1>
           <AgGridReact
             columnDefs={this.state.columnDefs}
-            rowData={this.state.rowData}>
+            rowData={this.state.rowData}
+            pagination={true}
+            paginationPageSize={this.state.paginationPageSize}>
           </AgGridReact>
         </div>
       </MainContainer>
