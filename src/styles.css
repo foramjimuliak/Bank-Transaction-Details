@@ -1,0 +1,15 @@
+.transaction-negative {
+  color: red;
+}
+.transaction-positive {
+  color: blue;
+}
+.ag-theme-balham .credit {
+  background-color: #d3d3d3;
+}
+.ag-theme-balham .debit {
+  background-color: #add8e6;
+}
+.ag-theme-balham .direct-debit {
+  background-color: #90ee90;
+}

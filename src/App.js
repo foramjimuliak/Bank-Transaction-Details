@@ -6,7 +6,8 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import './App.css';
 
-import settings from './settings'
+import settings from './settings';
+import './styles.css';
 
 const MainContainer = styled.div`
   display: flex;
@@ -26,13 +27,18 @@ class App extends Component {
         comparator: settings.dateComparator
       },
       {
-        headerName: "Transaction Amount",
+        headerName: "Transaction Amount (£)",
         field: "transactionAmount",
         sortable: true,
         sortingOrder: ["desc"],
+        cellClassRules:
+        {
+          "transaction-positive": "x > 0",
+          "transaction-negative": "x < 0"
+        }
       },
       {
-        headerName: "Current Balance",
+        headerName: "Current Balance (£)",
         field: "currentBalance"
       },
       {
@@ -45,6 +51,21 @@ class App extends Component {
         headerName: "Reference",
         field: "reference"
       }],
+      rowClassRules:
+      {
+        "debit": function(params)
+        {
+          return params.data.transactionType === 'withdrawal';
+        },
+        "credit": function(params)
+        {
+          return params.data.transactionType === 'credit';
+        },
+        "direct-debit": function(params)
+        {
+          return params.data.transactionType === 'direct debit';
+        },
+      },
       paginationPageSize: 10
     }
   }
@@ -74,7 +95,8 @@ class App extends Component {
             columnDefs={this.state.columnDefs}
             rowData={this.state.rowData}
             pagination={true}
-            paginationPageSize={this.state.paginationPageSize}>
+            paginationPageSize={this.state.paginationPageSize}
+            rowClassRules={this.state.rowClassRules}>
           </AgGridReact>
         </div>
       </MainContainer>
