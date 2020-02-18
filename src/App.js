@@ -40,6 +40,18 @@ class App extends Component {
     }
   }
 
+  async getTransactionDetails(){
+    fetch('http://localhost:3000/data.json')
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({rowData: data});
+      })
+  }
+  
+  componentDidMount() {
+    this.getTransactionDetails();
+  }
+
   render() {
     return (
       <MainContainer>
@@ -50,7 +62,8 @@ class App extends Component {
           width: '1000px' }}>
           <h1>Recent Bank Transactions</h1>
           <AgGridReact
-            columnDefs={this.state.columnDefs}>
+            columnDefs={this.state.columnDefs}
+            rowData={this.state.rowData}>
           </AgGridReact>
         </div>
       </MainContainer>

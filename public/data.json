@@ -1,0 +1,108 @@
+[
+
+    {
+        "transactionType": "withdrawal",
+        "transactionDate": "17-02-2020",
+        "transactionAmount": 115,
+        "currentBalance": 35633,
+        "reference": "sainsburys"
+    },
+    {
+        "transactionType": "direct debit",
+        "transactionDate": "14-02-2020",
+        "transactionAmount": 1000,
+        "currentBalance": 35748,
+        "reference": "rent"
+    },
+    {
+        "transactionType": "withdrawal",
+        "transactionDate": "12-02-2020",
+        "transactionAmount": -200,
+        "currentBalance": 36748,
+        "reference": "M & S"
+    },
+    {
+        "transactionType": "withdrawal",
+        "transactionDate": "10-02-2020",
+        "transactionAmount": 1000,
+        "currentBalance": 36948,
+        "reference": "sainsburys"
+    },
+    {
+        "transactionType": "direct debit",
+        "transactionDate": "05-02-2020",
+        "transactionAmount": 1200,
+        "currentBalance": 37948,
+        "reference": "sainsburys"
+    },
+    {
+        "transactionType": "credit",
+        "transactionDate": "30-01-2020",
+        "transactionAmount": 4000,
+        "currentBalance": 38148,
+        "reference": "sainsburys"
+    },
+    {
+        "transactionType": "withdrawal",
+        "transactionDate": "20-01-2020",
+        "transactionAmount": -200,
+        "currentBalance": 34148,
+        "reference": "sainsburys"
+    },
+    {
+        "transactionType": "direct debit",
+        "transactionDate": "16-01-2020",
+        "transactionAmount": 500,
+        "currentBalance": 34348,
+        "reference": "sainsburys"
+    },
+    {
+        "transactionType": "credit",
+        "transactionDate": "11-01-2020",
+        "transactionAmount": 200,
+        "currentBalance": 34848,
+        "reference": "next"
+    },
+    {
+        "transactionType": "withdrawal",
+        "transactionDate": "07-01-2020",
+        "transactionAmount": 115.12,
+        "currentBalance": 34648,
+        "reference": "sainsburys"
+    },
+    {
+        "transactionType": "direct debit",
+        "transactionDate": "03-01-2020",
+        "transactionAmount": -117,
+        "currentBalance": 34763,
+        "reference": "sainsburys"
+    },
+    {
+        "transactionType": "credit",
+        "transactionDate": "03-01-2020",
+        "transactionAmount": 200,
+        "currentBalance": 34880,
+        "reference": "sainsburys"
+    },
+    {
+        "transactionType": "withdrawal",
+        "transactionDate": "02-01-2020",
+        "transactionAmount": 200,
+        "currentBalance": 34680,
+        "reference": "sainsburys"
+    },
+    {
+        "transactionType": "direct debit",
+        "transactionDate": "02-01-2020",
+        "transactionAmount": -120,
+        "currentBalance": 34880,
+        "reference": "sainsburys"
+    },
+    {
+        "transactionType": "credit",
+        "transactionDate": "01-01-2020",
+        "transactionAmount": 115,
+        "currentBalance": 35000,
+        "reference": "sainsburys"
+    }
+]
